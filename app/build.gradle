@@ -1,0 +1,87 @@
+import com.baiyu.dependencies_config.BuildConfig
+import com.baiyu.dependencies_config.dependencies.AndroidX
+import com.baiyu.dependencies_config.dependencies.Koin
+import com.baiyu.dependencies_config.dependencies.NetWork
+import com.baiyu.dependencies_config.dependencies.Testing
+import com.baiyu.dependencies_config.dependencies.ThirdParty
+import com.baiyu.dependencies_config.dependencies.Google
+
+plugins {
+    id "com.baiyu.dependencies_config"
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+    buildToolsVersion BuildConfig.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.baiyu.jetpackexercise"
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation(Testing.junit)
+    androidTestImplementation(Testing.androidJunit)
+    androidTestImplementation(Testing.androidRunner)
+    androidTestImplementation(Testing.espresso)
+    implementation project(':basearchitecture')
+    compileOnly(AndroidX.appcompat)
+    compileOnly(AndroidX.constraintlayout)
+    compileOnly(AndroidX.recyclerView)
+    compileOnly(Google.material)
+    compileOnly(AndroidX.coreKtx)
+    compileOnly(AndroidX.activityKtx)
+    compileOnly(AndroidX.Lifecycle.commonJava8)
+    compileOnly(AndroidX.Lifecycle.liveDataKtx)
+    compileOnly(AndroidX.Lifecycle.viewModelKtx)
+
+    implementation(AndroidX.Navigation.runtime)
+    implementation(Google.gson)
+
+    implementation(ThirdParty.permission)
+    implementation(ThirdParty.Glide.glide)
+    annotationProcessor(ThirdParty.Glide.compiler)
+
+    implementation(ThirdParty.blankjUtils)
+    implementation(NetWork.Coroutines.coroutines)
+    compileOnly(NetWork.Retrofit.retrofit)
+    compileOnly(NetWork.Retrofit.gson)
+    implementation(ThirdParty.MMKV)
+    compileOnly(ThirdParty.Timber)
+    compileOnly(ThirdParty.loadingButton)
+
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.baiyu.jetpackexercise.viewmodel.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".ui.main.MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@{vm.name}"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@{vm.imgUrl}"
+            android:textColor="@android:color/background_dark" />
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:id="@+id/btn_test"
+            android:scaleType="fitCenter"
+            android:text="SEND"
+            android:background="@drawable/button_shape_default_rounded"
+            android:textColor="@android:color/white"
+            app:finalCornerAngle="50dp"
+            app:initialCornerAngle="50dp"
+            app:spinning_bar_color="#FFFFFFFF"
+            app:spinning_bar_padding="5dp"
+            app:spinning_bar_width="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="60dp" />
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,4 @@
+includeBuild("dependencies_config")
+include ':basearchitecture'
+include ':app'
+rootProject.name = "JetpackExercise"

@@ -1,0 +1,87 @@
+import com.baiyu.dependencies_config.BuildConfig
+import com.baiyu.dependencies_config.dependencies.AndroidX
+import com.baiyu.dependencies_config.dependencies.NetWork
+import com.baiyu.dependencies_config.dependencies.Testing
+import com.baiyu.dependencies_config.dependencies.ThirdParty
+import com.baiyu.dependencies_config.dependencies.Google
+
+plugins {
+    id "com.baiyu.dependencies_config"
+}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+    buildToolsVersion BuildConfig.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    testImplementation(Testing.junit)
+    androidTestImplementation(Testing.androidJunit)
+    androidTestImplementation(Testing.androidRunner)
+    androidTestImplementation(Testing.espresso)
+
+    implementation(AndroidX.appcompat)
+    implementation(AndroidX.coreKtx)
+    implementation(AndroidX.recyclerView)
+    implementation(AndroidX.constraintlayout)
+
+    implementation(AndroidX.Fragment.fragmentKtx)
+    implementation(AndroidX.activityKtx)
+
+    implementation(AndroidX.Lifecycle.commonJava8)
+    implementation(AndroidX.Lifecycle.liveDataKtx)
+    implementation(AndroidX.Lifecycle.viewModelKtx)
+
+    implementation(AndroidX.Navigation.uiKtx)
+
+    implementation(Google.material)
+
+    implementation(ThirdParty.Glide.glide)
+    kapt(ThirdParty.Glide.compiler)
+
+    implementation(ThirdParty.roundedImageView)
+    implementation(ThirdParty.BRVAH)
+    implementation(NetWork.Retrofit.retrofit)
+    implementation(NetWork.Retrofit.gson)
+    implementation(NetWork.OkHttp.okhttp)
+    implementation(NetWork.OkHttp.okhttp_log)
+    implementation(ThirdParty.Timber)
+    implementation(ThirdParty.loadingButton)
+
+}
