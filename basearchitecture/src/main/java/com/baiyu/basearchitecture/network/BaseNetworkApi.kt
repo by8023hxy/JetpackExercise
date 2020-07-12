@@ -8,11 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-/**
- * 作者　: hegaojian
- * 时间　: 2019/12/23
- * 描述　: 网络请求构建器基类
- */
+
 abstract class BaseNetworkApi {
     companion object {
         private const val CONNECT_TIME = 10 //连接超时时间 10秒

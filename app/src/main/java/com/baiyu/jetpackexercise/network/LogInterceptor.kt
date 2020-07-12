@@ -8,12 +8,6 @@ import java.io.IOException
 import java.nio.charset.Charset
 import java.nio.charset.UnsupportedCharsetException
 
-/**
- * 作者　: hegaojian
- * 时间　: 2019/12/12
- * 描述　: 打印Log的拦截器
- */
-
 class LogInterceptor : Interceptor {
 
     @Throws(IOException::class)
