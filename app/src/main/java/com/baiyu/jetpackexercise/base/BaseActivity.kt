@@ -28,7 +28,9 @@ abstract class BaseActivity : BaseDataBindingActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mViewModel = viewModel()
-        viewBinding().setVariable(BR.vm, mViewModel)
+        viewBinding().run {
+            setVariable(BR.vm,mViewModel)
+        }
         initData()
         registerObserver()
         registerUIChange()

@@ -1,5 +1,6 @@
 package com.baiyu.jetpackexercise.ui.main
 
+import android.util.Log
 import com.baiyu.jetpackexercise.base.BaseViewModel
 
 /**
@@ -8,5 +9,7 @@ import com.baiyu.jetpackexercise.base.BaseViewModel
  * @version: 1.0
  */
 class HomeViewModel :BaseViewModel(){
-    fun  getList() {}
+    fun  getList() {
+        Log.e("123124123213","0292272829202")
+    }
 }

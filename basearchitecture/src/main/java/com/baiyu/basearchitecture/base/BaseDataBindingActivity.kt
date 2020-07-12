@@ -15,7 +15,9 @@ import androidx.lifecycle.ViewModelProvider
 abstract class BaseDataBindingActivity : AppCompatActivity() {
     protected inline fun <reified T : ViewDataBinding> binding(
         @LayoutRes resId: Int
-    ): Lazy<T> = lazy { DataBindingUtil.setContentView<T>(this, resId) }
+    ): Lazy<T> = lazy { DataBindingUtil.setContentView<T>(this, resId).apply {
+        lifecycleOwner=this@BaseDataBindingActivity
+    } }
 
     //protected inline fun <reified T : ViewModel> viewModel(): Lazy<T> = lazy { ViewModelProvider(this).get(T::class.java) }
 }

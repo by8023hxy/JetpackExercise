@@ -17,9 +17,9 @@ class MainActivity : BaseActivity() {
 
     private val mainViewModel by viewModels<MainViewModel>()
     private val binding: ActivityMainBinding by binding(R.layout.activity_main)
+    private val homeFragment by lazy { HomeFragment() }
 
     override fun initData() {
-
         mainViewModel.getTest()
         btn_test.run {
             setOnClickListener {
@@ -27,6 +27,7 @@ class MainActivity : BaseActivity() {
                 startAnimation()
                 postDelayed({revertAnimation()
                 },2000)
+                mainViewModel.name.set("123123")
             }
         }
 
