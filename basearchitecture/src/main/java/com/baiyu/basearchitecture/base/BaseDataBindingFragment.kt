@@ -18,4 +18,5 @@ abstract class BaseDataBindingFragment : Fragment() {
         @LayoutRes resId: Int,
         container: ViewGroup?
     ): T = DataBindingUtil.inflate(inflater, resId, container, false)
+
 }

@@ -59,6 +59,8 @@ dependencies {
     androidTestImplementation(Testing.androidRunner)
     androidTestImplementation(Testing.espresso)
     implementation project(':basearchitecture')
+    api 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.0'
     compileOnly(AndroidX.appcompat)
     compileOnly(AndroidX.constraintlayout)
     compileOnly(AndroidX.recyclerView)
