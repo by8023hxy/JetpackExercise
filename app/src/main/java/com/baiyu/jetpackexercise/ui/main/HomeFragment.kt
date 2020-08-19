@@ -1,13 +1,10 @@
 package com.baiyu.jetpackexercise.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.viewModels
-import com.baiyu.basearchitecture.base.BaseDataBindingFragment
 import com.baiyu.jetpackexercise.BR
 import com.baiyu.jetpackexercise.R
 import com.baiyu.jetpackexercise.base.BaseVmFragment

@@ -1,6 +1,5 @@
 package com.baiyu.jetpackexercise.viewmodel
 
-import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import com.baiyu.basearchitecture.databind.StringObservableField
 import com.baiyu.basearchitecture.livedata.StatefulMutableLiveData
@@ -22,23 +21,22 @@ class MainViewModel : BaseViewModel() {
     val content = StringObservableField()
 
     private val repository by lazy { MainRepository() }
-     var responseLoginResponse: StatefulMutableLiveData<LoginResponse> = MutableLiveData()
+    var responseLoginResponse: StatefulMutableLiveData<LoginResponse> = MutableLiveData()
 
 
-    fun getTest(){
-
-        launchRequestVm({repository.login("bytest","123456")},{
+    fun getTest() {
+        launchRequestVm({ repository.login("bytest", "123456") }, {
             //请求成功 已自动处理了 请求结果是否正常
             imgUrl.set(it.avatar)
             name.set(it.username)
             content.set(it.uid.toString())
-            LogUtils.eTag("22929292922",imgUrl.get())
-        },{
+            LogUtils.eTag("22929292922", imgUrl.get())
+        }, {
             //请求失败 网络异常，或者请求结果码错误都会回调在这里
-            LogUtils.eTag("22929292922",it.errorMsg)
-        },true,"")
-    }
+            LogUtils.eTag("22929292922", it.errorMsg)
+        }, true, "")
 
+    }
 
 
 }

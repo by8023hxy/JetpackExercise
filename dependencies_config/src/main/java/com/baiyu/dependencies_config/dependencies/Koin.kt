@@ -6,7 +6,7 @@ package com.baiyu.dependencies_config.dependencies
  * @version: 1.0
  */
 object Koin {
-    private const val koinVersion = "2.0.1"
+    private const val koinVersion = "2.1.5"
 
     const val koin_android = "org.koin:koin-android:$koinVersion"
     const val koin_android_scope = "org.koin:koin-android:$koinVersion"

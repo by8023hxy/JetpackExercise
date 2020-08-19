@@ -23,7 +23,7 @@ object ThirdParty {
     const val blankjUtils = "com.blankj:utilcodex:1.26.0"
     const val BRVAH = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
     const val Timber = "com.jakewharton.timber:timber:4.7.1"
-    const val MMKV = "com.tencent:mmkv:1.0.22"
+    const val MMKV = "com.tencent:mmkv:1.1.2"
     const val loadingButton="br.com.simplepass:loading-button-android:2.2.0"
 
 }

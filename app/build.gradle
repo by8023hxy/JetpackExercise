@@ -26,6 +26,10 @@ android {
         versionName BuildConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        kotlinOptions {
+            jvmTarget = "1.8"
+            freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
+        }
     }
 
     buildTypes {
@@ -59,8 +63,7 @@ dependencies {
     androidTestImplementation(Testing.androidRunner)
     androidTestImplementation(Testing.espresso)
     implementation project(':basearchitecture')
-    api 'androidx.navigation:navigation-fragment-ktx:2.3.0'
-    api 'androidx.navigation:navigation-ui-ktx:2.3.0'
+
     compileOnly(AndroidX.appcompat)
     compileOnly(AndroidX.constraintlayout)
     compileOnly(AndroidX.recyclerView)
@@ -79,11 +82,13 @@ dependencies {
     annotationProcessor(ThirdParty.Glide.compiler)
 
     implementation(ThirdParty.blankjUtils)
-    implementation(NetWork.Coroutines.coroutines)
+
     compileOnly(NetWork.Retrofit.retrofit)
     compileOnly(NetWork.Retrofit.gson)
-    implementation(ThirdParty.MMKV)
+
     compileOnly(ThirdParty.Timber)
     compileOnly(ThirdParty.loadingButton)
-
+    implementation(Koin.koin_android)
+    implementation(Koin.koin_android_scope)
+    implementation(Koin.koin_android_viewmodel)
 }

@@ -9,8 +9,9 @@ object NetWork {
 
     //协程
     object Coroutines {
-        private const val coroutinesVersion = "1.3.0"
+        private const val coroutinesVersion = "1.3.7"
         const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+        const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     }
 
     object Retrofit {

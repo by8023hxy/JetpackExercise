@@ -38,6 +38,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
     }
     buildFeatures {
         dataBinding = true
@@ -83,5 +84,10 @@ dependencies {
     implementation(NetWork.OkHttp.okhttp_log)
     implementation(ThirdParty.Timber)
     implementation(ThirdParty.loadingButton)
+    api(ThirdParty.MMKV)
+    api 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    api(NetWork.Coroutines.coroutines)
+    api(NetWork.Coroutines.core)
 
 }

@@ -1,7 +1,6 @@
 package com.baiyu.jetpackexercise.base
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.ViewDataBinding
@@ -11,7 +10,6 @@ import com.baiyu.basearchitecture.widget.SlackLoadingView
 import com.baiyu.jetpackexercise.BR
 import com.baiyu.jetpackexercise.R
 import com.baiyu.jetpackexercise.widget.LoadingDialog
-import kotlinx.android.synthetic.main.dialog_loading.*
 
 
 /**
